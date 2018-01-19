@@ -1,0 +1,31 @@
+.top {
+    text-align: center;
+}
+.title {
+    margin-bottom: 0px;
+}
+.titleDiscription {
+    margin-top: 0px;
+}
+.subltleLink {
+    color: black;
+    text-decoration: none;
+}
+.subltleLink:hover {
+    color: blueviolet;
+    text-decoration: underline;
+}
+.body {
+    padding-left: 20%;
+}
+.hWord {
+    display: inline;
+}
+p {
+    display: inline;
+}
+iframe {
+    border: none;
+    width: 60%;
+    height: 20%;
+}
