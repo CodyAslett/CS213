@@ -1,4 +1,5 @@
-        <h5 class="top">        
+<div id="header" class="header">
+<h5 class="top">        
             <a href="introduction/" class="subltleLink">    
                 Cody A. Aslett 
             </a>
@@ -8,4 +9,6 @@
         </h1>
         <h2 class="top titleDiscription">
             Web Engineering II
+            <hr>
         </h2>
+</div>

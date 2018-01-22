@@ -1,0 +1,32 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application:
+
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+	https://github.com/CodyAslett/CS213
+
+3. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+	Personal introduction and course assignment links
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+	could look better
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+	it detects the directories and looks for indexes to use. needs some work still
+
+6. What is the difference between an HTTP Get and Post? When should each be used?
+	get appends the information at the end of the url for return while post sends it as a message.
+	git is for simple non-sensitive information while post is for everything else
+
+7. Please select the category you feel best describes your assignment:
+A - Some attempt was made
+B - Developing, but significantly deficient
+C - Slightly deficient, but still mostly adequate
+D - Meets requirements
+E - Shows creativity and excels above and beyond requirements
+	D
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+
+	it works and but the extra effort had limited success. 

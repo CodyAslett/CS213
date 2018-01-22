@@ -1,19 +1,37 @@
 <html>
     <head>
+        <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE"></META>
         <link rel="stylesheet" type="text/css" href="index.css">
     </head>
     <body>
-        <div id=""
-        <div id="header">
+        <?php 
+            include './parts/navBar.php';
+        ?>
+        
             <?php
-                $header = file_get_contents('./parts/header.html', true);
+                $header = file_get_contents('./parts/header.php', true);
                 echo $header;
             ?>
-        </div>
-        <div class="body" id="intro">
+        <div class="body" id="listTest">
             <?php
-                $intro = file_get_contents('./introduction/introduction.html', true);
-                echo $intro;
+                $dir = scandir(__DIR__);
+                echo "\t\t\t<ul>\n";
+                for ($x = 2; $x < sizeof($dir); $x++) {
+                    if(file_exists($dir[$x] . "/index.php")) {
+                        $ref = $dir[$x] . "/index.php";
+                        echo "\t\t\t\t<li><a href=\"$ref\">$dir[$x]\n\t\t<br>\n";
+                        $t = './' . $dir[$x] . "/index.php";
+                        echo "</a></li>\n";
+                    }
+                }
+            ?>
+        </div>
+    echo "\t\t\t<ul>\n";
+        
+        
+        <div class="body" id="assignments"> 
+            <?php
+                include './assignments/team/index.php';
             ?>
         </div>
     </body>

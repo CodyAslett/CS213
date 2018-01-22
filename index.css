@@ -1,3 +1,39 @@
+.navBar{
+    text-align: center;
+    width: 20%;
+    height: 80%; /* Full height */
+    position: fixed;
+    bottom: 0;
+    
+    background-color: #d1d1d1;
+     /* Make it stick, even on scroll */
+    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+    visibility: visible;
+}
+.navBar img{
+    width: 90%;
+    max-width: 200px;
+    border-radius: 50%;
+    margin-bottom: 50px;
+    border: 10% solid red;
+}
+.navBar ul{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 15%;
+}
+.navBar ul li{
+    display: block;
+    list-style-type: none;
+    vertical-align: middle;
+}
+.navBar ul li a{
+    color: black;
+    text-decoration: none;
+    font: 120%;
+}
+
 .top {
     text-align: center;
 }
@@ -18,6 +54,25 @@
 .body {
     padding-left: 20%;
 }
+.body ul li{
+    list-style: none;
+    padding: 10%;
+    font-size: 10vw;
+    padding-bottom: 30%;
+    border-bottom: 1px solid black;
+}
+
+.body ul li a{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.header {
+    padding-left: 20%;
+    height: 20%;
+    background-color: floralwhite;
+}
 .hWord {
     display: inline;
 }
@@ -27,5 +82,5 @@ p {
 iframe {
     border: none;
     width: 60%;
-    height: 20%;
+    height: 15%;
 }
