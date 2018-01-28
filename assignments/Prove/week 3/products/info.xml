@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<item>
+    <name>template</name>
+    <tag>template</tag>
+    <discription>template to copy to put in products. php matches the tag above to the tags in attributes.xml</discription>
+</item>
