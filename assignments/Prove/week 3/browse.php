@@ -30,6 +30,7 @@
 </script>
 
 <?php
+echo "DIR : " . __DIR__;
     $products = __DIR__ . '\products';
     $one = simplexml_load_file($products . '/attributes.xml');
     $tags = $one->tag;
