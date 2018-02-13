@@ -28,7 +28,6 @@
 *********************************************************************/
     function tile($recipieID)
     {
-      echo "START";
       try
       {
         global $db; // global allows me to access the variable inside the function. without it it wont work and yould have to make another server call
@@ -68,9 +67,6 @@
       <h1 class="topTitle">
         Recipe Book
       </h1>
-      <p>
-        <?php echo "Connecting to server : $server";?>
-      </p>
       <?php
         // make a tile for every recipe
         // if get too many recipies may want to limit this to a spcific number
