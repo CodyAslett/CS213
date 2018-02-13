@@ -28,6 +28,7 @@
 *********************************************************************/
     function tile($recipieID)
     {
+      echo "START";
       try
       {
         global $db; // global allows me to access the variable inside the function. without it it wont work and yould have to make another server call
