@@ -41,7 +41,7 @@
         echo "\t\t\t" . '<div class="recipeTile">' . "\n";
         
         // Image Div
-        echo "\t\t\t\t<div class=\"recipeTileImg\">\n\t\t\t\t\t<img src=\"../../../img/" . $imgName . "\">\n\t\t\t\t</div>\n";
+        echo "\t\t\t\t<div class=\"recipeTileImg\">\n\t\t\t\t\t<img src=\"..\..\..\img\\" . $imgName . "\">\n\t\t\t\t</div>\n";
 
         // Info Div - name, stars, maybe creator
         // TO DO : if name to long cut it off or tiles get lifted out of allignment. it seems so that bottom lines of text align
