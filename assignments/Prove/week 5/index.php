@@ -28,6 +28,8 @@
 *********************************************************************/
     function tile($recipieID)
     {
+      try
+      {
         global $db; // global allows me to access the variable inside the function. without it it wont work and yould have to make another server call
         $dataBaseRecipeNameRequest = $db->query("SELECT image_main_name, name FROM recipes WHERE id = $recipieID");
         $recipe = $dataBaseRecipeNameRequest->fetch();
@@ -48,6 +50,11 @@
         // End main div
         echo "\t\t\t</div>\n";
         echo "\t\t" . "</a>\n";
+      }
+      catch (Exception  $ex)
+      {
+        echo $ex;
+      }
     }
 
 ?>
