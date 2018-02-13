@@ -9,7 +9,7 @@
       $serverConnectionStatus = "tryed";
       // include the php file that stores the values $server, $user, $password
       // so that you can connet to the database
-      include '..\..\..\recipeDatabaseCredentials.php';
+      include 'recipeDatabaseCredentials.php';
       $db = new PDO($server, $user, $password);
       $serverConnectionStatus = "success";        
     }
