@@ -67,6 +67,9 @@
       <h1 class="topTitle">
         Recipe Book
       </h1>
+      <p>
+        <?php echo "Connecting to server : $server";?>
+      </p>
       <?php
         // make a tile for every recipe
         // if get too many recipies may want to limit this to a spcific number
