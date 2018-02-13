@@ -16,7 +16,7 @@
 		{
 	//access server
 			$serverConnectionStatus = "tryed";
-			include 'C:\Bitnami\wappstack-7.1.12-0\apache2\recipeDatabaseCredentials.php';
+			include '../../../recipeDatabaseCredentials.php';
 			$db = new PDO($server, $user, $password);
 			$serverConnectionStatus = "success";
 	// read in recipe data from server
