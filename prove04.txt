@@ -1,0 +1,24 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Describe something from your database that you think came together very nicely.
+	When I found I could type it all in a file first instead of using the command line everything got a lot easier
+
+2. Describe something from your database that you think could be improved or extended in the future.
+	Nutritional information
+
+3. Briefly describe the "coolest" thing you learned while completing this assignment.
+	Creating using a file
+
+4. Briefly describe two principles of good database design.
+	Start with heavy restrictions and easy up on them if needed
+
+5. Please select the category you feel best describes your assignment:
+A - Some attempt was made
+B - Developing, but significantly deficient
+C - Slightly deficient, but still mostly adequate
+D - Meets requirements
+E - Shows creativity and excels above and beyond requirements
+	D
+
+6. Provide a brief justification (1-2 sentences) for selecting that category.
+	I added items to the database

@@ -1,0 +1,67 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+
+1. Copy and paste the URL for your web application:
+	
+http://codyaslett.herokuapp.com/assignments/Prove/week%203/index.php
+
+ 
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+	
+https://github.com/CodyAslett/CS213/tree/master/assignments/Prove/week%203
+
+
+3. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+	
+Browse Items: you can add items
+view 
+	cart: show all items and counts, you can remove items
+	
+check out : gets the address
+	
+confirmation: shows address and purchase
+
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+	
+it seems to all be working but graphics and UI could use a little polishing
+
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+	file managment with php
+6. List one strength and one limitation of using cookies.
+	
+strength:
+		
+you can track people
+the client stores the information
+
+
+	limitation:
+		
+size is limited
+		
+the client saves it so you have to worry about hacking/modifying of cookie
+s
+		they expire
+
+
+7. Please select the category you feel best describes your assignment:
+	
+A - Some attempt was made
+	
+B - Developing, but significantly deficient
+
+	C - Slightly deficient, but still mostly adequate
+	
+D - Meets requirements
+	
+E - Shows creativity and excels above and beyond requirements
+	
+D maybe E
+
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+
+	as far as a web app it is easy to add new items because it scrapes the information for you.
+	ontop of meeting basic requirements
