@@ -9,17 +9,13 @@
 	if ($_SERVER["REQUEST_METHOD"] == "GET") {
 		$recipeID = intval(strip_tags(test_input($_GET["id"]))); // do some converting to avoid secuirty problems
 
+		// get database
+		require('dbConnect.php');
+  		$db = get_db();
 
 
-		$serverConnectionStatus = "unattempted";
 		try
 		{
-	//access server
-			$serverConnectionStatus = "tryed";
-			include '../../../recipeDatabaseCredentials.php';
-			$db = new PDO($server, $user, $password);
-			$serverConnectionStatus = "success";
-	// read in recipe data from server
 			$dbRecipeStatement = "SELECT name, description, creator_users_id, image_main_name FROM recipes WHERE id = $recipeID";
 			$dbRequest = $db->query($dbRecipeStatement);
 			$recipe = $dbRequest->fetch();

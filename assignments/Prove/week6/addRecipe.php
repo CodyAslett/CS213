@@ -4,9 +4,9 @@
 
 
 		//INSERT INTO recipes(name, description, creator_users_id, image_main_name) 
-				$sql = "INSERT INTO recipes(name, description, creator_users_id, image_main_name) VALUES('Test Recipe', 'testing recipes description. testing recipes description, testing recipes description ',1,'1main.jpg')";
-				$stmt = $db->prepare($sql);
-				$stmt->execute();
+				// $sql = "INSERT INTO recipes(name, description, creator_users_id, image_main_name) VALUES('Test Recipe', 'testing recipes description. testing recipes description, testing recipes description ',1,'1main.jpg')";
+				// $stmt = $db->prepare($sql);
+				// $stmt->execute();
 
 
 
