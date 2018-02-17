@@ -63,5 +63,15 @@
           tile($row['id']);
         }
       ?>
+      <a href = "addRecipe.php">
+        <div class = "recipeTile">
+          <div class = "recipeTileImg">
+            <img src = "">
+          </div>
+          <div class = "recipeTileInfo">
+            Add New Rcipe
+          </div>
+        </div>
+      </a>
     </body>
 </htm>

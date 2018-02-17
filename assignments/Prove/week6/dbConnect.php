@@ -4,11 +4,7 @@
 function get_db() {
 	$dbUrl = getenv('DATABASE_URL');
 	if (empty($dbUrl)) {
-		$dbUser = "php_user";
-		$dbPassword = "aVaryGoodPassword1029384756";
-		$dbPort = "";
-		$dbHost = "localhost";
-		$dbName = "cookbook";
+		require('dbCredentails.php');
 	} else {
 		$dbopts = parse_url($dbUrl);
 		$dbHost = $dbopts["host"];
