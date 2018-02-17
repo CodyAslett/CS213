@@ -24,7 +24,11 @@
 			<input type ="name" name="recipeName" class="name">
 			<br>
 		</form>
+<?php 
+	$q = $db->query("SELECT * FROM 'information_schema.tables'");
+	$q->fetch();
 
+?>
 
 	</body>
 </html>

@@ -8,6 +8,12 @@
 CREATE DATABASE cookbook;
 \c cookbook
 
+CREATE USER php_user WITH PASSWORD 'unlockForPHP6006';
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO note_user;
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO note_user;
+
+
+
 -- 0
 DROP TABLE favorites;
 DROP TABLE ratings;
