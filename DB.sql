@@ -49,11 +49,10 @@ CREATE TABLE public.users
 -- 7 Dependencies
 CREATE TABLE public.recipes
 (
-    id SERIAL NOT NULL PRIMARY KEY,
+  id SERIAL NOT NULL PRIMARY KEY,
 	name VARCHAR(100) NOT NULL,
-    description TEXT NOT NULL,
-    creator_users_id INT NOT NULL REFERENCES public.users(id),
-    image_main_name VARCHAR(100) NOT NULL
+  description TEXT NOT NULL,
+  creator_users_id INT NOT NULL REFERENCES public.users(id)
 );
 
 -- 2 Dependencies
@@ -121,7 +120,6 @@ CREATE TABLE public.instructions
 CREATE TABLE public.pictures
 (
     id SERIAL NOT NULL PRIMARY KEY,
-	pic_locations VARCHAR(256) NOT NULL,
     recipe_id INT NOT NULL REFERENCES public.recipes(id),
     users_id INT NOT NULL REFERENCES public.users(id)
 );
@@ -371,18 +369,22 @@ INSERT INTO tags (name) --21
    VALUES('quick & easy');
 
 
+
+---------------------------------------------------------------------
 -- RECIPES
-INSERT INTO recipes(name, description, creator_users_id, image_main_name) -- 1
-   VALUES('Test Recipe', 'testing recipes description. testing recipes description, testing recipes description ',1,'1main.jpg');
+-- 
+---------------------------------------------------------------------
+INSERT INTO recipes(name, description, creator_users_id) -- 1
+   VALUES('Test Recipe', 'testing recipes description. testing recipes description, testing recipes description ',1);
 
-INSERT INTO recipes (name, description, creator_users_id, image_main_name) -- 2
-  VALUES ('testFood', 'somethign vary yummy', 1,'2main.jpg');
+INSERT INTO recipes (name, description, creator_users_id) -- 2
+  VALUES ('testFood', 'somethign vary yummy', 1);
 
-INSERT INTO recipes(name, description, creator_users_id, image_main_name) -- 3
-   VALUES('Meatball Ramen', 'a quick and easy meal',2,'3main.jpg');
+INSERT INTO recipes(name, description, creator_users_id) -- 3
+   VALUES('Meatball Ramen', 'a quick and easy meal',2);
 
-INSERT INTO recipes(name, description, creator_users_id, image_main_name) -- 4
-   VALUES('Pancakes', 'A old fashioned classic, that everyone loves',4, '4main.jpg');
+INSERT INTO recipes(name, description, creator_users_id) -- 4
+   VALUES('Pancakes', 'A old fashioned classic, that everyone loves',4);
 
 
 -- INGREDIENTS in RECIPES
@@ -445,6 +447,20 @@ INSERT INTO instructions(instruction_text, recipes_id, num_order) -- Pancakes
 
 
 
+-- PICTURES
+INSERT INTO pictures(recipe_id, users_id) --Test Recipe
+    VALUES(1, 1);
+
+INSERT INTO pictures(recipe_id, users_id) --testFood
+    VALUES(2, 1);
+
+INSERT INTO pictures(recipe_id, users_id) --Meatball Ramen
+    VALUES(3, 2);
+
+INSERT INTO pictures(recipe_id, users_id) --Pancakes
+    VALUES(4, 4);
+
+
 -- RECIPES TAGS
 INSERT INTO recipe_tags(recipe_id, tag_id) --1
    VALUES(1, 1);
@@ -479,3 +495,5 @@ SELECT * FROM instructions;
 SELECT * FROM tags;
 SELECT * FROM recipes;
 SELECT * FROM recipe_tags;
+
+SELECT column_default FROM information_schema.columns where table_name='recipes';

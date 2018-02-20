@@ -18,17 +18,29 @@
       try
       {
         global $db; // global allows me to access the variable inside the function. without it it wont work and yould have to make another server call
-        $dataBaseRecipeNameRequest = $db->query("SELECT image_main_name, name FROM recipes WHERE id = $recipieID");
+        $dataBaseRecipeNameRequest = $db->query("SELECT name FROM recipes WHERE id = $recipieID");
         $recipe = $dataBaseRecipeNameRequest->fetch();
         $recipeName = $recipe['name'];
-        $imgName = $recipe['image_main_name'];
+
+        $dataBaseRecipeImageRequest = $db->query("SELECT id FROM pictures WHERE recipe_id = $recipieID");
+        $image = $dataBaseRecipeImageRequest->fetch();
+        $image = $image['id'];
+        $imgName = "$image.jpg";
+        //$imgName = '2main.jpg'; // Testing image
 
         // Start Main Div
         echo "\t\t" . '<a href = "recipe.php?id=' . $recipieID . '">' . "\n";
         echo "\t\t\t" . '<div class="recipeTile">' . "\n";
         
         // Image Div
-        echo "\t\t\t\t<div class=\"recipeTileImg\">\n\t\t\t\t\t<img src=\"..\..\..\img\\" . $imgName . "\">\n\t\t\t\t</div>\n";
+        if (file_exists("..\\..\\..\\img\\$imgName"))
+        {
+          echo "\t\t\t\t<div class=\"recipeTileImg\">\n\t\t\t\t\t<img src=\"..\..\..\img\\" . $imgName . "\">\n\t\t\t\t</div>\n";
+        }
+        else
+        {
+          echo "\t\t\t\t<div class=\"recipeTileImg\">\n\t\t\t\t\t<img src=\"..\..\..\img\\" . "2.jpg" . "\">\n\t\t\t\t</div>\n";
+        }
 
         // Info Div - name, stars, maybe creator
         // TO DO : if name to long cut it off or tiles get lifted out of allignment. it seems so that bottom lines of text align
@@ -66,7 +78,7 @@
       <a href = "addRecipe.php">
         <div class = "recipeTile">
           <div class = "recipeTileImg">
-            <img src = "">
+            <img src="..\..\..\img\addRecipe.jpg">
           </div>
           <div class = "recipeTileInfo">
             Add New Rcipe

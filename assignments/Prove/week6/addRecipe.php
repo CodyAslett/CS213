@@ -20,13 +20,15 @@
 	</head>
 	<body>
 		<?php include 'menu.php' ?>
-		<form action="/addRecipe.php">
-			<input type ="name" name="recipeName" class="name">
+		<form action="submitRecipe.php" id="newRecipe" method="post">
+			<input type ="name" name="recipeName" class="name" placeholder="Name">
 			<br>
+			<textarea name="discription" form="newRecipe" placeholder="discription"></textarea>
+			<br>
+			<input type="submit">
 		</form>
 <?php 
-	$q = $db->query("SELECT * FROM 'information_schema.tables'");
-	$q->fetch();
+
 
 ?>
 

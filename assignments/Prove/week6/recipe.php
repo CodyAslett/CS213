@@ -4,35 +4,44 @@
 	$recipeName = "";
 	$recipeDiscription = "";
 	$recipeCreator = "";
+	$recipeName = "";
+	$recipeCreatorId = "";
 
-
-	if ($_SERVER["REQUEST_METHOD"] == "GET") {
+	if ($_SERVER["REQUEST_METHOD"] == "GET") 
+	{
 		$recipeID = intval(strip_tags(test_input($_GET["id"]))); // do some converting to avoid secuirty problems
-
-		// get database
-		require('dbConnect.php');
-  		$db = get_db();
-
 
 		try
 		{
-			$dbRecipeStatement = "SELECT name, description, creator_users_id, image_main_name FROM recipes WHERE id = $recipeID";
+			//get database
+			require('dbConnect.php');
+			$db = get_db();
+
+			$dbRecipeStatement = "SELECT name, description, creator_users_id FROM recipes WHERE id = $recipeID";
 			$dbRequest = $db->query($dbRecipeStatement);
 			$recipe = $dbRequest->fetch();
+
 			$recipeName = $recipe['name'];
 			$recipeDiscription = $recipe['description'];
 			$recipeCreatorId = $recipe['creator_users_id'];
-			$imgName = $recipe['image_main_name'];
 
-		// get creator name
+			$imgRequest = $db->query("SELECT id FROM pictures WHERE recipe_id = $recipeID");
+			$img = $imgRequest->fetch();
+			$imgID = $img['id'];
+			$imgName = "$imgID.jpg";
+
+
+
+			//get creator name
 			$dbCreatorStatement = "SELECT id, display_name FROM users WHERE id = $recipeCreatorId";
 			$dbCreatorRequest = $db->query($dbCreatorStatement);
 			$recipeCreator = $dbCreatorRequest->fetch();
+
 			$recipeCreatorName = $recipeCreator['display_name'];
-		}
-			catch (PDOException $ex)
+		 }
+		catch (Exception $ex)
 		{
-			$serverConnectionStatus = "failed";
+			echo "ERROR";
 		}
 	}
 
@@ -52,6 +61,7 @@
     </head>
 	<body>
 		<?php include 'menu.php' ?>
+
 		<h1>
 			<?php echo "$recipeName\n"; ?>
 		</h1>
@@ -60,7 +70,7 @@
 			 echo "Added by: $recipeCreatorName\n"; ?>
 		</div>
 		<div class="imageHead">
-			<img src="../../../img/<?php echo $imgName?>">
+			<img src="../../../img/<?php echo $imgName;?>">
 		</div>
 		<div class=discription>
 			<?php echo "$recipeDiscription\n"; ?>
