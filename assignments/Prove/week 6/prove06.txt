@@ -2,20 +2,20 @@ After completing the assignment, please answer the questions in this text file a
 
 1. Copy and paste the URL for your web application:
 
-
+http://codyaslett.herokuapp.com/assignments/Prove/week6/index.php
 2. Copy and paste the URL for your source code repository (e.g., GitHub):
-
+https://github.com/CodyAslett/CS213/tree/master/assignments/Prove/week6
 
 3. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
-
+	Can add new recipe
 
 4. Briefly describe any pieces of the assignment that are not yet working correctly.
-
+	Add picture
 
 5. Briefly describe the "coolest" thing you learned while completing this assignment.
-
+	
 6. What is a benefit of having a foreign key constraint?
-
+	Keeps things organized so you can change a rows name or another meaningful value without having to change the references to it.
 
 7. Please select the category you feel best describes your assignment:
 A - Some attempt was made
@@ -23,3 +23,4 @@ B - Developing, but significantly deficient
 C - Slightly deficient, but still mostly adequate
 D - Meets requirements
 E - Shows creativity and excels above and beyond requirements
+	C to D
