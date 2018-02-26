@@ -240,67 +240,58 @@ INSERT INTO qt_type(name) -- 12
 
 
 -- INGREDIENTS
-INSERT INTO ingredients (name, group_id) -- 1
-   VALUES('test ingredient 1', 1);
-
-INSERT INTO ingredients (name, group_id) -- 2
-   VALUES('test ingredient 2', 1);
-
-INSERT INTO ingredients (name, group_id) -- 3
-   VALUES('test ingredient 3', 1);   
-
-INSERT INTO ingredients (name, group_id) --4 
+INSERT INTO ingredients (name, group_id) 
    VALUES('milk', 5);
 
-INSERT INTO ingredients (name, group_id) -- 5
+INSERT INTO ingredients (name, group_id) 
    VALUES('egg', 5);    
 
-INSERT INTO ingredients (name, group_id) -- 6
+INSERT INTO ingredients (name, group_id) 
    VALUES('tortilla', 4);
 
-INSERT INTO ingredients (name, group_id) -- 7
+INSERT INTO ingredients (name, group_id) 
    VALUES('water', 11);
 
-INSERT INTO ingredients (name, group_id) -- 8 
+INSERT INTO ingredients (name, group_id)
    VALUES('canola oil', 7);
 
-INSERT INTO ingredients (name, group_id) -- 9
+INSERT INTO ingredients (name, group_id) 
    VALUES('flour', 4);
 
-INSERT INTO ingredients (name, group_id) -- 10
+INSERT INTO ingredients (name, group_id) 
    VALUES('chicken broth', 11);
 
-INSERT INTO ingredients (name, group_id) -- 11
+INSERT INTO ingredients (name, group_id) 
    VALUES('salt', 9);
 
-INSERT INTO ingredients (name, group_id) -- 12
+INSERT INTO ingredients (name, group_id) 
    VALUES('black pepper', 9);
 
-INSERT INTO ingredients (name, group_id) -- 13
+INSERT INTO ingredients (name, group_id) 
    VALUES('ground beef', 6);
 
-INSERT INTO ingredients (name, group_id) --14
+INSERT INTO ingredients (name, group_id) 
    VALUES('chopped onion', 2);
 
-INSERT INTO ingredients (name, group_id) -- 15
+INSERT INTO ingredients (name, group_id) 
    VALUES('diced green chilies', 2);
 
-INSERT INTO ingredients (name, group_id) -- 16
+INSERT INTO ingredients (name, group_id) 
    VALUES('chopped green onions', 2);
 
-INSERT INTO ingredients (name, group_id) -- 17
+INSERT INTO ingredients (name, group_id) 
    VALUES('chopped black olives', 2);
 
-INSERT INTO ingredients (name, group_id) -- 18
+INSERT INTO ingredients (name, group_id) 
    VALUES('grated cheddar cheese', 5);
  
-INSERT INTO ingredients (name, group_id) -- 19
+INSERT INTO ingredients (name, group_id) 
    VALUES('baking powder', 10);
 
-INSERT INTO ingredients (name, group_id) -- 20
+INSERT INTO ingredients (name, group_id) 
    VALUES('sugar', 8);
 
-INSERT INTO ingredients (name, group_id) -- 21
+INSERT INTO ingredients (name, group_id) 
    VALUES('butter', 5);
 
 
