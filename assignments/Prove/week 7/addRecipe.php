@@ -25,7 +25,7 @@
 
 		$dbRequestIngredents = $db->query("SELECT id, name FROM ingredients");
 
-		echo "<select name='$name'>\n";
+		echo "<select name='ingredent[]' onchange='addIngredient()'>\n";
 
 		echo "\t<option value=0></option>\n";
 
@@ -47,9 +47,9 @@
 
 		$dbRequestQtType = $db->query("SELECT id, name FROM qt_type");
 
-		echo "<input type='number'>";
+		echo "<input type='number' name='ingredentQt[]'>";
 
-		echo "<select name='$name'>\n";
+		echo "<select name='ingredentQtType[]' onchange='test()'>\n";
 		echo "\t<option value=0></option>\n";
 		foreach ($dbRequestQtType  as $qt)
 		{
@@ -69,12 +69,14 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="recipe.css">
         <link rel="stylesheet" type="text/css" href="menu.css">
+        <script src="addRecipe.js" type="text/javascript"></script>
         <title>New Recipe></title>
 	</head>
 	<body>
-		<?php include 'menu.php' ?>
+<?php include 'menu.php' ?>
+
 		<form action="submitRecipe.php" id="newRecipe" method="post" enctype="multipart/form-data">
-			<input type ="name" name="recipeName" class="name" placeholder="Name">
+			<input type ="name" name="recipeName" class="name" placeholder="Name" id="nameInput" autofocus>
 			<br>
 			<?php echo $userName ?>
 			<br>
@@ -86,30 +88,25 @@
 			<h3>
 				Ingredients
 			</h3>
-			<div id="ingredents">
-<!-- should make something better then hard coding -->
+<!-- should make something better then hard coding: probebly restructure to table -->
+			<p>
 				Name - - - - - - - - - - - - - - - Quanty - - - - - - - - - - - - Quanty Type
-				<br>
-				<?php
-					echo "1: ";
-					selectIngredient("ingredient1");
-					selectIngredientQt("qt1");
-					echo "\n<br>\n2: ";
-					selectIngredient("ingredient2");
-					selectIngredientQt("qt2");
-					echo "\n<br>\n3: ";
-					selectIngredient("ingredient3");
-					selectIngredientQt("qt3");
-					echo "\n<br>\n";
-				?>
+			</p>
+			<div id="addIngredents">
+				<div id="ingredents">
+					<?php
+						selectIngredient("ingredient1");
+						selectIngredientQt("qt1");
+						echo "\n<br>\n";
+					?>
+				</div>
 			</div>
 			<h3>
 				Directions
 			</h3>
 			<div id="directions">
-				1: <textarea name="direction1" form="newRecipe" rows="3" class="direction"></textarea><br>
-				2: <textarea name="direction2" form="newRecipe" rows="3" class="direction"></textarea><br>
-				3: <textarea name="direction3" form="newRecipe" rows="3" class="direction"></textarea><br>
+				<textarea id="direction" name="direction[]" form="newRecipe" rows="3" class="direction" onchange="addDirection()" ></textarea><br>
+				<textarea id="direction2" name="direction[]" form="newRecipe" rows="3" class="direction" onchange="addDirection()" ></textarea><br>
 			</div>
 			<br>
 			<input type="submit">

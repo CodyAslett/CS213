@@ -1,6 +1,39 @@
 <?php
 	session_start();
 
+
+
+
+
+
+	echo "POST\n<br>\n";
+	foreach ($_POST as $key => $value) 
+	{
+  		echo "$key\n<br>\n";
+  		foreach($value as $k => $v)
+  		{
+  			echo "\t - $k \n<br>\n";
+  			echo "\t$v \n<br>\n";
+  		}
+  		echo "<hr>";
+	} 
+	echo "\n<br>\n";
+	echo "END POST\n<br>\n";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	if(!isset($_SESSION["user"]))
 	{
 		header("Location: signIn.php");
@@ -11,7 +44,6 @@
 		header("Location: signIn.php");
 		die();
 	}
-
 
 	$userId = $_SESSION["user"];
 
@@ -66,6 +98,41 @@
   				// get id of recipe just added
   				$id = $db->lastInsertId('recipes_id_seq');
   				echo "new recipe id : $id\n<br>\n";
+
+  				// add ingredients
+  				$i = 0;
+  				foreach ($_POST["ingredent"] as $key => $value)
+				{
+					if ($value != "")
+					{
+						$qt = 0;
+						if (isset($_POST["ingredentQt"][$i]))
+						{
+							if ($_POST["ingredentQt"][$i] != "")
+							{
+								$qt = floatval($_POST["ingredentQt"][$i]);
+							}
+						}
+						$k = $key + 1;
+						$addRequest = $db->prepare("INSERT INTO ingredients_recipes(recipe_id, ingredient_id, qt, qt_type) VALUES(?, ?, ?, ?)");
+	  					$addRequest->execute( array($id, $value, $qt, 1));
+	  					echo "ADDed: $id, $value, 0, 1\n<br>\n";
+  					}
+  					$i = $i + 1;
+				}
+
+  				// add instructions
+  				foreach ($_POST["direction"] as $key => $value)
+				{
+					if ($value != "")
+					{
+						$k = $key + 1;
+						$addRequest = $db->prepare("INSERT INTO instructions(instruction_text, recipes_id, num_order) VALUES(?, ?, ?)");
+	  					$addRequest->execute( array("$value", $id, $k));
+	  					echo "ADDed: $value, $id, $key\n<br>\n";
+  					}
+				}
+
 
 
   				// PICTURES
@@ -126,4 +193,4 @@
 <?php
 	header("Location: recipe.php?id=$id.php");
 	die();
-	?>
+?>
