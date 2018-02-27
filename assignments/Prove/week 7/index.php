@@ -48,9 +48,9 @@ header("Pragma: no-cache");
         echo "\t\t\t" . '<div class="recipeTile">' . "\n";
         
         // Image Div
-        if (file_exists("..\\..\\..\\img\\$imgName"))
+        if (file_exists("../../../img/$imgName"))
         {
-          echo "\t\t\t\t<div class=\"recipeTileImg\">\n\t\t\t\t\t<img src=\"..\..\..\img\\" . $imgName . "\" name=\"img_$image\">\n\t\t\t\t</div>\n";
+          echo "\t\t\t\t<div class=\"recipeTileImg\">\n\t\t\t\t\t<img src=\"../../../img/" . $imgName . "\" name=\"img_$image\">\n\t\t\t\t</div>\n";
         }
         else
         {
